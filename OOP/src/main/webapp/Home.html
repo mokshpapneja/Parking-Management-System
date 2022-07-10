@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+
+
+<div class="container-fluid"
+	style="height: 5px; background-color: #303f9f"></div>
+
+<div class="container-fluid p-3 bg-light">
+	<div class="row">
+		<div class="col-md-3 text-success">
+			<h3>
+				 Parking Manager
+			</h3>
+		</div>
+		<div class="col-md-4">
+			<form class="form-inline my-2 my-lg-0" action="search.jsp" method="post">
+				<input class="form-control mr-sm-2" type="search" name="ch"
+					placeholder="Search" aria-label="Search">
+				<button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+
+
+		<c:if test="${not empty userobj}">
+			<div class="col-md-5">
+
+				<a href="checkout.jsp"><i class="fas fa-cart-plus fa-2x"></i></a>
+				
+				 <a href="login.jsp"
+					class="btn btn-success"><i class="fas fa-user-plus"></i>
+					${userobj.name}</a> 
+					
+					<a href="logout" class="btn btn-primary text-white"><i
+					class="fas fa-sign-in-alt"></i> Logout</a>
+			</div>
+
+		</c:if>
+
+
+
+		<c:if test="${empty userobj }">
+			<div class="col-md-3">
+				<a href="login.jsp" class="btn btn-success"><i
+					class="fas fa-sign-in-alt"></i> Login</a> <a href="register.jsp"
+					class="btn btn-primary text-white"><i class="fas fa-user-plus"></i>
+					Register</a>
+			</div>
+
+		</c:if>
+
+	</div>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+	<a class="navbar-brand" href="#"><i class="fas fa-home"></i></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent" aria-expanded="false"
+		aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active"><a class="nav-link" href="index.jsp">Home
+					<span class="sr-only">(current)</span>
+			</a></li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+			<a href="setting.jsp" class="btn btn-light my-2 my-sm-0" type="submit">
+				<i class="fas fa-cog"></i> Setting
+			</a>
+			<button class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
+				<i class="fas fa-phone-square-alt"></i> Contact Us
+			</button>
+		</form>
+	</div>
+</nav>
+
+
+    <div class="container-fluid">
+     <h3> Parking-Slots </h3>
+      <div class="col-md-3">
+        <div class="cord-body text-center" >
+        <img src="img/car-parking-main.jpg" 
+        style="width: 150px; height: 200px" class="img-thumblin">
+        <p>Location:</p>
+        <p>Time:</p>
+        <div class="row">
+           <a href="" class="btn btn-danger btn-sm">Book Now</a>
+        </div>
+        </div>
+      </div>
+      
+      
+      <div class="text-center mt-1">
+          <a href="" class="btn btn-danger btn-sm text-white">View All</a>
+      </div>
+    </div>
+</body>
+</html>
+<style>
+ .bg-custom {
+	background-color: #ff0000;
+}
+
+
+.navbar .nav-item:hover .nav-link {
+	background-color: white;
+	color: #ff0000;
+	border-radius: 15px;
+}
+</style>
